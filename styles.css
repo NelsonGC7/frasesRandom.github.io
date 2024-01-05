@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+    --GrayishBlue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+    --monrope:'Manrope', sans-serif;
+}
+body{
+    background-color: var(--Dark-Blue);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Light-Cyan);
+    padding: 0 1rem 0 1rem;
+    font-family: var(--monrope);
+}
+
+.targeta{
+    
+    max-width: 425px;
+    max-height: 450px;
+    padding: 1.8rem 1rem 1.8rem 1rem;
+    background-color: var(--Dark-Grayish-Blue);
+    border-radius: 15px;
+    position: relative;
+    top: -5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+.targeta h2{
+    text-transform: uppercase;
+    font-size: .7rem;
+    color: var(--Neon-Green);
+    font-weight: 200;
+    letter-spacing: 2px;
+
+}
+.targeta p{
+    width: 100%;
+    font-weight: 800;
+    font-size: x-large;
+    text-align: center;
+    margin: auto;
+    padding: 1rem 0 1rem 0;
+}
+.targeta .targeta__bton{
+    position: absolute; 
+    top: 100%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--Neon-Green);
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    img{
+        width: 1.8rem;
+    }
+
+
+}
+
+.targeta .targeta__figure{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    padding-bottom: 1rem;
+    
+    div{
+        height: 2px;
+        width: 40%;
+        background-color: var(--GrayishBlue);
+    }
+    img{
+        width: 3.5rem;
+       
+    
+    }
+
+
+}
