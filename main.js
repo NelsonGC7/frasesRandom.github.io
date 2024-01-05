@@ -6,13 +6,7 @@ const url = 'https://api.adviceslip.com/advice';
 const inicio = ()=>{
     fetch(url)
     .then(response =>{
-        if(response.status === 200){
-            return response.json();
-            
-                
-        }else{
-            throw new Error('Error: ' + response.status);
-        }
+        return response.json();
     })
     .then( data => {
         title.textContent = `Advice # ${data.slip.id}`;
@@ -26,15 +20,10 @@ const inicio = ()=>{
 
 inicio()
 bton.addEventListener('click',()=>{
-    if(title.textContent !== `Advice #` && frase.innerHTML !== "" ){
-        frase.innerHTML = "" ;
-        title.textContent = `Advice #`
-        console.log(title.textContent)
-        inicio()
-        
-    }
 
-    
+    setTimeout(inicio(),2000);
+   
+   console.log('hola')
 
     
    /* fetch(url)
@@ -59,5 +48,9 @@ bton.addEventListener('click',()=>{
 
 });
 
+window.onload = ()=>{
+    inicio()
+
+}
 
  
