@@ -3,6 +3,37 @@ const frase = document.querySelector('.targeta p');
 const bton = document.querySelector('.targeta .targeta__bton')
 const url = 'https://api.adviceslip.com/advice';
 
+const  Frase = ()=>{
+    let randomNumber = Math.random(); 
+    let apiUrl = `${url}?random=${randomNumber}`; 
+
+    fetch(apiUrl)
+    .then(response =>{
+        if(response.status === 200){
+            return response.json();
+        }else{
+            throw new Error('Error: ' + response.status);
+        }
+    })
+    .then( data => {
+        title.textContent = `Advice # ${data.slip.id}`;
+        frase.innerHTML = `"${data.slip.advice}"`;
+        
+    })
+    .catch(err =>console.error('Error:', err)); 
+}
+    
+Frase()
+
+
+bton.addEventListener('click',()=>{
+    Frase()
+});
+
+
+    
+
+/*
 const inicio = ()=>{
     fetch(url)
     .then(response =>{
@@ -18,17 +49,15 @@ const inicio = ()=>{
     .catch(err =>console.error('Error:', err));
 }
 
-inicio()
+
 bton.addEventListener('click',()=>{
 
-    setTimeout(inicio(),2000);
    
-   console.log('hola')
-
     
-   /* fetch(url)
+    fetch(url)
     .then(response =>{
         if(response.status === 200){
+            
             return response.json();
             
                 
@@ -44,13 +73,10 @@ bton.addEventListener('click',()=>{
         
 
     })
-    .catch(err =>console.error('Error:', err)); */
+    .catch(err =>console.error('Error:', err)); 
 
 });
 
-window.onload = ()=>{
-    inicio()
 
-}
-
+*/
  
